@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    scroll-behavior: smooth;
+}
+
+.header-bg {
+    background-image: url('/img/portada10.png');
+    background-size: cover; /* Cambiado a contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vh; /* O el valor que prefieras */
+    justify-content: center;
+    align-items: center;
+}
+
+.prod_1{
+    background-image: url('/img/fondo.png');
+    background-size: cover; /* Cambiado a contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: full; /* O el valor que prefieras */
+    justify-content: center;
+    align-items: center;
+}
+
+.prod_2{
+    background-image: url('/img/fondo3.png');
+    background-size: cover; /* Cambiado a contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: full; /* O el valor que prefieras */
+    justify-content: center;
+    align-items: center;
+}
+
+.prod_3{
+    background-image: url('/img/bonelessnaturales.png');
+    background-size: cover; /* Cambiado a contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: full; /* O el valor que prefieras */
+    justify-content: center;
+    align-items: center;
+}
+
+.prod_4{
+    background-image: url('/img/papas.png');
+    background-size: cover; /* Cambiado a contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: full; /* O el valor que prefieras */
+    justify-content: center;
+    align-items: center;
+}
+
+.prod_5{
+    background-image: url('/img/refresco.png');
+    background-size: cover; /* Cambiado a contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: full; /* O el valor que prefieras */
+    justify-content: center;
+    align-items: center;
+}
+
+.acordeon {
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+.acordeon.open {
+    max-height: 500px; /* Ajusta según el contenido máximo esperado */
+    opacity: 1;
+    pointer-events: auto;
+  }
