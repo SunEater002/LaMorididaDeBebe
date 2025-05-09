@@ -2,8 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    scroll-behavior: smooth;
+
+/* 1. Prevenir overflow horizontal globalmente */
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 2. Asegurar que las imágenes nunca excedan el ancho del contenedor */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 3. Ajustar bordes laterales en secciones para móviles */
+@media (max-width: 767px) {
+  .border-l-8, .border-r-8 {
+    border-left-width: 4px !important;
+    border-right-width: 4px !important;
+  }
+}
+
+/* 5. Ajustar grids para evitar overflow */
+.grid {
+  min-width: 0;
+}
+
+/* 6. Ajustar botones y enlaces para que no excedan el ancho */
+a, button {
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .header-bg {
