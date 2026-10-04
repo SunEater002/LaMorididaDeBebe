@@ -13,3 +13,14 @@ function ordenarProducto(nombre, precio) {
     
     window.open(enlaceWhatsApp, '_blank'); // Abre en nueva pestaña
 }
+
+  function scrollReferencias(direccion) {
+    const carrusel = document.getElementById('referencias-carrusel');
+    const tarjeta = carrusel.querySelector('.referencia-card');
+    const espacio = Number.parseFloat(getComputedStyle(carrusel).columnGap) || 0;
+
+    carrusel.scrollBy({
+      left: direccion * (tarjeta.getBoundingClientRect().width + espacio),
+      behavior: 'smooth'
+    });
+  }
