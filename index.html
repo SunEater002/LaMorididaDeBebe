@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>La Mordida de Bebe</title>
   <link href="./styles.css" rel="stylesheet">
-  <link rel="website icon" type="png"
-  href="./img/icono-husky.png" sizes="20x20">
+  <link rel="website icon" type="png" href="./img/icono-husky.png" sizes="20x20">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
+
 <body class="bg-gradient-to-br from-pink-200 via-yellow-200 to-pink-300 min-h-screen font-sans text-gray-800">
 
   <!-- Header / Portada -->
-  <header  class="header-bg min-h-min bg-white/80 shadow-lg py-8 px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat">
+  <header class="header-bg min-h-min bg-white/80 shadow-lg py-8 px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat">
     <div class="absolute inset-0 "></div>
     <div class="relative z-10 flex flex-col items-center py-8 px-4">
       <img src="./img/huskyboneless.png" alt="Logo La Mordida de Bebe" class="w-32 h-32 rounded-full mb-4">
@@ -29,17 +29,18 @@
         <a href="#galeria-productos" class="inline-block bg-pink-500 hover:bg-pink-700 hover:scale-105 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-all duration-300 text-center">
           GALERÍA
         </a>
+        <!-- NUEVO: botón de comentarios -->
+        <a href="#comentarios" class="inline-block bg-pink-500 hover:bg-pink-700 hover:scale-105 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-all duration-300 text-center">
+          COMENTARIOS
+        </a>
         <a href="#contacto" class="inline-block bg-pink-500 hover:bg-pink-700 hover:scale-105 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-all duration-300 text-center">
           CONTACTO
         </a>
       </div>
     </div>
-    </div>
   </header>
 
-
   <section class="max-w-5xl mx-auto mt-10 px-4" id="productos">
-
     <section class="max-w-4xl mx-auto mt-16 px-4" data-aos="fade-up" data-aos-offset="100" data-aos-delay="300">
       <div class="bg-yellow-100 border-l-8 border-r-8 border-pink-400 shadow-lg rounded-xl p-8 flex flex-col md:flex-row items-center justify-center">
         <div>
@@ -50,19 +51,14 @@
 
     <p class="italic text-center font-semibold text-xl md:text-2xl text-pink-700 mb-10 p-6">¡Bienvenido! Disfruta de los mejores boneless y snacks en un ambiente único. Descubre nuestras ofertas y productos destacados.</p>
 
-
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-
       <!-- Producto 1 -->
       <div class="prod_1 border-4 border-pink-600 bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-center hover:scale-105 transition-transform gap-2" data-aos="fade-right" data-aos-offset="100" data-aos-delay="300">
         <img src="./img/feliz.png" alt="Boneless Clásicos" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-4">
         <h3 class="text-4xl font-bold text-gray-100 mb-2 text-center">Aullido Infernal 🔥</h3>
         <span class="bg-pink-100 text-pink-700 font-bold px-6 py-2 rounded-full mb-4">$109 MXN</span>
-
         <button onclick="toggleLista('servicio1-lista')" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Info</button>
-
         <button onclick="ordenarProducto('Aullido Infernal', 109)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
-
         <ul id="servicio1-lista" class="acordeon mt-4 text-left w-full bg-pink-100 rounded-lg p-4 shadow-inner space-y-2">
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> 10 pz de Boneless sabor Buffalo</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> Aderezo Ranch</li>
@@ -76,9 +72,7 @@
         <h3 class="text-4xl font-bold text-gray-100 mb-2 text-center">Ladrido BBQ 🐶</h3>
         <span class="bg-pink-100 text-pink-700 font-bold px-6 py-2 rounded-full mb-4">$109 MXN</span>
         <button onclick="toggleLista('servicio2-lista')" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Info</button>
-
         <button onclick="ordenarProducto('Ladrido BBQ', 109)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
-
         <ul id="servicio2-lista" class="acordeon mt-4 text-left w-full bg-pink-100 rounded-lg p-4 shadow-inner space-y-2">
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> 10 pz de Boneless sabor BBQ</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> Aderezo Ranch</li>
@@ -90,12 +84,9 @@
       <div class="prod_3 border-4 border-pink-600 bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-center transition-transform hover:scale-105 gap-2" data-aos="fade-left" data-aos-offset="100" data-aos-delay="300">
         <img src="./img/soplo.png" alt="Alitas BBQ" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-4">
         <h3 class="text-4xl font-bold text-gray-100 mb-2 text-center">Nieve Siberiana ❄️</h3>
-        </h3>
         <span class="bg-pink-100 text-pink-700 font-bold px-6 py-2 rounded-full mb-4">$109 MXN</span>
         <button onclick="toggleLista('servicio3-lista')" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Info</button>
-
         <button onclick="ordenarProducto('Nieve Siberiana', 109)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
-
         <ul id="servicio3-lista" class="acordeon mt-4 text-left w-full bg-pink-100 rounded-lg p-4 shadow-inner space-y-2">
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> 10 pz de Boneless Naturales</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> Aderezo Ranch</li>
@@ -113,62 +104,48 @@
     </div>
   </section>
 
-<!-- Sección de Ofertas -->
-
-<section class="max-w-3xl mx-auto mt-16 px-4">
-
+  <!-- Sección de Ofertas -->
+  <section class="max-w-3xl mx-auto mt-16 px-4">
     <!-- Oferta 1 con imagen -->
     <div class="bg-yellow-100 border-l-4 border-pink-400 rounded-xl p-8 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 mb-6" data-aos="fade-right" data-aos-offset="100" data-aos-delay="400">
-      <!-- Imagen ilustrativa -->
       <div class="flex-shrink-0 flex justify-center items-center mb-4 md:mb-0">
         <img src="./img/fondo4papas.png" alt="Boneless en Oferta" class="w-32 h-32 md:w-40 md:h-40 object-cover rounded-xl shadow-md border-4 border-pink-200">
       </div>
-      <!-- Texto de la oferta -->
       <div class="flex-1 flex flex-col justify-center">
         <h2 class="text-2xl font-bold text-pink-700 mb-2">¡Combo Alfa 🐺!</h2>
-        <p class="text-gray-700 mb-2 font-semibold">10 pz de Boneless ( BBQ, Buffalo, Naturales) + Papas a la francesa, acompañadas con Aderezo Ranch</p>
+        <p class="text-gray-700 mb-2 font-semibold">10 pz de Boneless ( BBQ, Buffalo, Naturales) + Papas a la francesa, acompañadas con Aderezo Ranch</p>
         <span class="inline-block bg-pink-600 text-white px-4 py-1 rounded-full font-semibold mb-4">Solo por tiempo limitado</span>
         <span class="bg-pink-100 text-pink-700 font-bold px-4 py-1 rounded-full mb-4">$120 MXN</span>
-
         <button onclick="ordenarProducto('Combo Alfa', 119)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
-
       </div>
     </div>
-  
+
     <!-- Oferta 2 con imagen -->
     <div class="bg-yellow-100 border-r-4 border-pink-400 rounded-xl p-8 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 mb-6" data-aos="fade-left" data-aos-offset="100" data-aos-delay="400">
-      <!-- Imagen ilustrativa -->
       <div class="flex-shrink-0 flex justify-center items-center mb-4 md:mb-0">
         <img src="./img/combo2bbq.png" alt="Papas en Oferta" class="w-32 h-32 md:w-40 md:h-40 object-cover rounded-xl shadow-md border-4 border-pink-200">
       </div>
-      <!-- Texto de la oferta -->
       <div class="flex-1 flex flex-col justify-center">
         <h2 class="text-2xl font-bold text-pink-700 mb-2">¡Combo Doble 🐾!</h2>
-        <p class="text-gray-700 mb-2 font-semibold">20 pz de Boneless ( BBQ, Buffalo, Naturales) acpañadas con Aderezo Ranch y zanahoria</p>
+        <p class="text-gray-700 mb-2 font-semibold">20 pz de Boneless ( BBQ, Buffalo, Naturales) acpañadas con Aderezo Ranch y zanahoria</p>
         <p class="text-gray-700 mb-2 font-semibold"> + 25 pesos se puede agregar una porcion de papas a la francesa </p>
         <span class="inline-block bg-pink-600 text-white px-4 py-1 rounded-full font-semibold mb-4">Solo hoy</span>
         <span class="bg-pink-100 text-pink-700 font-bold px-4 py-1 rounded-full mb-4">$169 MXN</span>
-
         <button onclick="ordenarProducto('Combo Doble', 169)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
-
       </div>
     </div>
 
-     <!-- Oferta 3 con imagen -->
-     <div class="bg-yellow-100 border-l-4 border-pink-400 rounded-xl p-8 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6" data-aos="fade-right" data-aos-offset="100" data-aos-delay="400">
-      <!-- Imagen ilustrativa -->
+    <!-- Oferta 3 con imagen -->
+    <div class="bg-yellow-100 border-l-4 border-pink-400 rounded-xl p-8 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6" data-aos="fade-right" data-aos-offset="100" data-aos-delay="400">
       <div class="flex-shrink-0 flex justify-center items-center mb-4 md:mb-0">
         <img src="./img/combo1buffalo.png" alt="Papas en Oferta" class="w-32 h-32 md:w-40 md:h-40 object-cover rounded-xl shadow-md border-4 border-pink-200">
       </div>
-      <!-- Texto de la oferta -->
       <div class="flex-1 flex flex-col justify-center">
         <h2 class="text-2xl font-bold text-pink-700 mb-2">¡Combo Manada ❄️!</h2>
-        <p class="text-gray-700 mb-2 font-semibold">30 pz de Boneless ( BBQ, Buffalo, Naturales) + 1 orden de papas a la francesa, acompañadas con Aderezo Ranch</p>
+        <p class="text-gray-700 mb-2 font-semibold">30 pz de Boneless ( BBQ, Buffalo, Naturales) + 1 orden de papas a la francesa, acompañadas con Aderezo Ranch</p>
         <span class="inline-block bg-pink-600 text-white px-4 py-1 rounded-full font-semibold mb-4">Solo por tiempo limitado</span>
         <span class="bg-pink-100 text-pink-700 font-bold px-4 py-1 rounded-full mb-4">$320 MXN</span>
-
         <button onclick="ordenarProducto('Combo Manada', 319)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
-
       </div>
     </div>
   </section>
@@ -182,13 +159,13 @@
           <img src="./img/bonelessbbq.png" alt="Boneless Clásicos" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-4">
           <img src="./img/feliz.png" alt="Boneless Clásicos" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-md mb-4">
           <img src="./img/riendo.png" alt="Boneless Clásicos" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-md mb-4">
-          <img src="./img/bonelessbuffalo.png" alt="Boneless Clásicos" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-4">  </div>
+          <img src="./img/bonelessbuffalo.png" alt="Boneless Clásicos" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-4">
+        </div>
       </div>
     </div>
   </section>
 
   <section class="max-w-4xl mx-auto mt-16 px-4" id="venta-dos-productos">
-    
     <section class="max-w-4xl mx-auto mt-16 px-4 mb-6">
       <div class="bg-yellow-100 border-l-8 border-r-8 border-pink-400 shadow-lg rounded-xl p-8 flex flex-col md:flex-row items-center justify-center" data-aos="fade-up" data-aos-offset="100" data-aos-delay="400">
         <div>
@@ -197,9 +174,7 @@
       </div>
     </section>
 
-
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
       <!-- Producto 1 -->
       <div class="prod_4 border-4 border-pink-600 bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-center hover:scale-105 transition-transform gap-2" data-aos="fade-right" data-aos-offset="100" data-aos-delay="400">
         <img src="./img/feliz.png" alt="Boneless Clásicos" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-4">
@@ -214,12 +189,10 @@
         <h4 class="text-lg font-bold text-pink-700 mb-2 bg-pink-100 px-6 py-2 rounded-full text-center">(Pepsi, Manzanita, 7up)</h4>
         <span class="bg-pink-700 text-pink-100 font-bold px-6 py-2 rounded-full mb-4">$29 MXN</span>
       </div>
-    
     </div>
   </section>
 
   <!-- seccion de fotos de prodcutos -->
-
   <section class="max-w-5xl mx-auto mt-16 px-4" id="galeria-productos" aria-labelledby="galeria-productos-titulo">
     <div class="bg-yellow-100 border-l-8 border-r-8 border-pink-400 shadow-lg rounded-xl p-6 md:p-8" data-aos="fade-up" data-aos-offset="100">
       <div class="text-center mb-8">
@@ -257,22 +230,24 @@
     </div>
   </section>
 
-
   <section class="max-w-4xl mx-auto mt-16 px-4" id="historia">
     <div class="bg-white/90 border-l-8 border-pink-400 shadow-xl rounded-xl p-8 flex flex-col md:flex-row items-center gap-8" data-aos="fade-up" data-aos-offset="100" data-aos-delay="400">
-      <!-- Imagen alusiva, puedes cambiar la ruta -->
       <div class="flex-shrink-0">
         <img src="./img/bebe_2.jpg" alt="Nuestra Historia" class="w-40 h-40 md:w-56 md:h-56 object-cover rounded-xl shadow-lg border-4 border-pink-200 bg-pink-50"/>
       </div>
-      <!-- Texto de la historia -->
       <div>
         <h2 class="text-3xl font-extrabold text-pink-700 mb-4 text-center md:text-left">Nuestra Historia</h2>
         <p class="text-gray-700 text-lg md:text-xl leading-relaxed text-center md:text-left"><span class="font-bold text-pink-600">La Mordida de Bebe</span> es más que una tienda de boneless: es un homenaje con sabor.
-          Todo comenzó cuando nuestro querido husky, Bebe, enfermó gravemente. Para cubrir sus gastos médicos, decidimos comenzar a vender boneless a domicilio. Aunque luchamos con todo nuestro amor, Bebe falleció debido a una negligencia médica.
-          En su memoria, elegimos seguir adelante con este proyecto, transformando el dolor en algo que compartimos con cada cliente: calidad, dedicación y mucho corazón.
-          Cada pedido que sale de nuestra cocina lleva el espíritu alegre de Bebe y el compromiso de honrar su vida. Gracias por ser parte de esta historia. 🐾💙
-          <br><br>
-          ¡Comparte anécdotas, valores y el amor por los boneless y snacks que los hace únicos!
+
+Todo comenzó cuando nuestro querido husky, Bebe, enfermó gravemente. Para cubrir sus gastos médicos, decidimos comenzar a vender boneless a domicilio. Aunque luchamos con todo nuestro amor, Bebe falleció debido a una negligencia médica.
+
+En su memoria, elegimos seguir adelante con este proyecto, transformando el dolor en algo que compartimos con cada cliente: calidad, dedicación y mucho corazón.
+
+Cada pedido que sale de nuestra cocina lleva el espíritu alegre de Bebe y el compromiso de honrar su vida. Gracias por ser parte de esta historia. 🐾💙
+
+<br><br>
+
+¡Comparte anécdotas, valores y el amor por los boneless y snacks que los hace únicos!
         </p>
       </div>
     </div>
@@ -285,136 +260,199 @@
           <h2 id="referencias-titulo" class="text-3xl font-bold text-pink-700">Referencias</h2>
         </div>
       </div>
+
       <div id="referencias-carrusel" class="referencias-track" role="region" aria-label="Carrusel de fotos" aria-roledescription="carrusel" tabindex="0">
-        <article class="referencia-card">
-          <img src="./img/ref1.jpg" alt="Bebe, nuestro husky" loading="lazy">
-        </article>
-        <article class="referencia-card">
-          <img src="./img/ref2.jpg" alt="Bebe descansando junto a su familia" loading="lazy">
-        </article>
-        <article class="referencia-card">
-          <img src="./img/ref3.jpg" alt="Boneless con papas para compartir" loading="lazy">
-        </article>
-        <article class="referencia-card">
-          <img src="./img/ref4.jpg" alt="Ilustración de boneless BBQ" loading="lazy">
-        </article>
-        <article class="referencia-card">
-          <img src="./img/ref5.jpg" alt="Ilustración de boneless BBQ" loading="lazy">      
-        </article>
-        <article class="referencia-card">
-          <img src="./img/ref6.jpg" alt="Ilustración de boneless BBQ" loading="lazy">
-        </article>
-         <article class="referencia-card">
-          <img src="./img/ref7.jpg" alt="Ilustración de boneless BBQ" loading="lazy">
-        </article>
-         <article class="referencia-card">
-          <img src="./img/ref8.jpg" alt="Ilustración de boneless BBQ" loading="lazy">
-        </article>
+        <article class="referencia-card"><img src="./img/ref1.jpg" alt="Bebe, nuestro husky" loading="lazy"></article>
+        <article class="referencia-card"><img src="./img/ref2.jpg" alt="Bebe descansando junto a su familia" loading="lazy"></article>
+        <article class="referencia-card"><img src="./img/ref3.jpg" alt="Boneless con papas para compartir" loading="lazy"></article>
+        <article class="referencia-card"><img src="./img/ref4.jpg" alt="Ilustración de boneless BBQ" loading="lazy"></article>
+        <article class="referencia-card"><img src="./img/ref5.jpg" alt="Ilustración de boneless BBQ" loading="lazy"></article>
+        <article class="referencia-card"><img src="./img/ref6.jpg" alt="Ilustración de boneless BBQ" loading="lazy"></article>
+        <article class="referencia-card"><img src="./img/ref7.jpg" alt="Ilustración de boneless BBQ" loading="lazy"></article>
+        <article class="referencia-card"><img src="./img/ref8.jpg" alt="Ilustración de boneless BBQ" loading="lazy"></article>
       </div>
     </div>
   </section>
+
+  <!-- ============ NUEVO: COMENTARIOS ============ -->
+  <section class="max-w-4xl mx-auto mt-16 px-4" id="comentarios" aria-labelledby="comentarios-titulo">
+    <div class="bg-yellow-100 border-l-8 border-r-8 border-pink-400 shadow-lg rounded-xl p-6 md:p-8" data-aos="fade-up" data-aos-offset="100">
+
+      <div class="text-center mb-8">
+        <p class="text-pink-600 font-bold uppercase tracking-widest text-sm mb-2">Lo que dice la manada</p>
+        <h2 id="comentarios-titulo" class="text-3xl md:text-4xl font-extrabold text-pink-700 mb-2">¿Ya probaste nuestros boneless?</h2>
+        <p class="text-gray-700 text-lg">Cuéntanos qué te pareció. 🐾</p>
+        <p id="comentarios-resumen" class="mt-2 text-xl font-bold text-yellow-600"></p>
+      </div>
+
+      <!-- Formulario -->
+      <form id="comentarios-form" class="bg-white rounded-xl shadow p-5 md:p-6 mb-8 space-y-4" novalidate>
+        <div>
+          <label for="cmt-nombre" class="block font-semibold text-pink-700 mb-1">Tu nombre</label>
+          <input id="cmt-nombre" type="text" maxlength="40" autocomplete="given-name"
+                 class="w-full border-2 border-pink-200 focus:border-pink-500 outline-none rounded-lg px-3 py-2"
+                 placeholder="Ej. Ana">
+        </div>
+
+        <div>
+          <label for="cmt-platillo" class="block font-semibold text-pink-700 mb-1">¿Qué pediste? (opcional)</label>
+          <select id="cmt-platillo" class="w-full border-2 border-pink-200 focus:border-pink-500 outline-none rounded-lg px-3 py-2 bg-white">
+            <option value="">Prefiero no decir</option>
+            <option>Aullido Infernal</option>
+            <option>Ladrido BBQ</option>
+            <option>Nieve Siberiana</option>
+            <option>Combo Alfa</option>
+            <option>Combo Doble</option>
+            <option>Combo Manada</option>
+            <option>Papas a la francesa</option>
+          </select>
+        </div>
+
+        <div>
+          <span class="block font-semibold text-pink-700 mb-1">Calificación</span>
+          <div id="cmt-estrellas" class="text-3xl text-yellow-500" role="group" aria-label="Calificación de 1 a 5 estrellas">
+            <button type="button" data-v="1" aria-label="1 estrella">☆</button>
+            <button type="button" data-v="2" aria-label="2 estrellas">☆</button>
+            <button type="button" data-v="3" aria-label="3 estrellas">☆</button>
+            <button type="button" data-v="4" aria-label="4 estrellas">☆</button>
+            <button type="button" data-v="5" aria-label="5 estrellas">☆</button>
+          </div>
+          <input id="cmt-calificacion" type="hidden" value="">
+        </div>
+
+        <div>
+          <label for="cmt-texto" class="block font-semibold text-pink-700 mb-1">Tu comentario</label>
+          <textarea id="cmt-texto" rows="4" maxlength="500"
+                    class="w-full border-2 border-pink-200 focus:border-pink-500 outline-none rounded-lg px-3 py-2"
+                    placeholder="¿Qué te pareció la comida, el sabor, la atención?"></textarea>
+        </div>
+
+        <!-- Campo trampa para bots: no lo quites ni lo muestres -->
+        <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <label for="cmt-web">No llenar</label>
+          <input id="cmt-web" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit"
+                class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-xl shadow-lg transition-all disabled:opacity-50">
+          Enviar comentario
+        </button>
+        <p id="cmt-aviso" role="status" class="mt-3 font-semibold text-center"></p>
+        <p class="text-xs text-gray-500 text-center">Los comentarios se revisan antes de publicarse.</p>
+      </form>
+
+      <!-- Comentarios aprobados -->
+      <div id="comentarios-lista" class="grid gap-4 md:grid-cols-2">Cargando comentarios…</div>
+      <div class="text-center mt-6">
+        <button id="comentarios-mas" type="button" class="hidden bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-6 rounded-xl shadow">Ver más comentarios</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ FIN COMENTARIOS ============ -->
 
   <!-- Botón flotante WhatsApp -->
   <a href="https://wa.me/qr/FMROBI6AVM7NM1" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 rounded-full p-3 shadow-lg transition-transform hover:scale-110">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-8 h-8"/>
   </a>
 
-<section class="max-w-3xl mx-auto mt-16 px-4" id="contacto">
-  <div class="bg-white/90 border-r-8 border-pink-400 shadow-xl rounded-xl p-8 flex flex-col items-center gap-6" data-aos="zoom-in" data-aos-offset="100" data-aos-delay="300">
-    <h2 class="text-3xl font-extrabold text-pink-700 mb-2 text-center">¡Pagos fáciles y seguros!</h2>
-    <p class="text-lg text-gray-700 text-center font-semibold mb-4">
-      Aceptamos pagos con <span class="text-pink-600 font-bold">tarjeta</span>, <span class="text-pink-600 font-bold">transferencia</span> y <span class="text-pink-600 font-bold">efectivo</span>.<br>
-      Haz tu pedido por WhatsApp y elige tu método favorito.
-    </p>
-    <div class="flex flex-wrap justify-center gap-8 mb-4">
-      <!-- Visa -->
-      <div class="flex flex-col items-center">
-        <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
-          <rect width="48" height="32" rx="6" fill="#1A1F71"/>
-          <text x="24" y="21" text-anchor="middle" fill="white" font-size="18" font-family="Arial" font-weight="bold">VISA</text>
-        </svg>
-        <span class="text-xs mt-1 text-gray-600">Visa</span>
+  <section class="max-w-3xl mx-auto mt-16 px-4" id="contacto">
+    <div class="bg-white/90 border-r-8 border-pink-400 shadow-xl rounded-xl p-8 flex flex-col items-center gap-6" data-aos="zoom-in" data-aos-offset="100" data-aos-delay="300">
+      <h2 class="text-3xl font-extrabold text-pink-700 mb-2 text-center">¡Pagos fáciles y seguros!</h2>
+      <p class="text-lg text-gray-700 text-center font-semibold mb-4">
+        Aceptamos pagos con <span class="text-pink-600 font-bold">tarjeta</span>, <span class="text-pink-600 font-bold">transferencia</span> y <span class="text-pink-600 font-bold">efectivo</span>.<br>
+        Haz tu pedido por WhatsApp y elige tu método favorito.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-8 mb-4">
+        <!-- Visa -->
+        <div class="flex flex-col items-center">
+          <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
+            <rect width="48" height="32" rx="6" fill="#1A1F71"/>
+            <text x="24" y="21" text-anchor="middle" fill="white" font-size="18" font-family="Arial" font-weight="bold">VISA</text>
+          </svg>
+          <span class="text-xs mt-1 text-gray-600">Visa</span>
+        </div>
+        <!-- MasterCard -->
+        <div class="flex flex-col items-center">
+          <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
+            <rect width="48" height="32" rx="6" fill="#fff"/>
+            <circle cx="18" cy="16" r="10" fill="#EB001B"/>
+            <circle cx="30" cy="16" r="10" fill="#F79E1B" fill-opacity="0.9"/>
+          </svg>
+          <span class="text-xs mt-1 text-gray-600">MasterCard</span>
+        </div>
+        <!-- American Express -->
+        <div class="flex flex-col items-center">
+          <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
+            <rect width="48" height="32" rx="6" fill="#2E77BB"/>
+            <text x="24" y="21" text-anchor="middle" fill="#fff" font-size="13" font-family="Arial" font-weight="bold">AMEX</text>
+          </svg>
+          <span class="text-xs mt-1 text-gray-600">American Express</span>
+        </div>
+        <!-- UpSíVale -->
+        <div class="flex flex-col items-center">
+          <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
+            <rect width="48" height="32" rx="6" fill="#E6007E"/>
+            <text x="24" y="21" text-anchor="middle" fill="#fff" font-size="12" font-family="Arial" font-weight="bold">UpSíVale</text>
+          </svg>
+          <span class="text-xs mt-1 text-gray-600">UpSíVale</span>
+        </div>
+        <!-- Edenred -->
+        <div class="flex flex-col items-center">
+          <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
+            <rect width="48" height="32" rx="6" fill="#E51B24"/>
+            <circle cx="36" cy="16" r="8" fill="#fff" fill-opacity="0.15"/>
+            <text x="24" y="21" text-anchor="middle" fill="#fff" font-size="12" font-family="Arial" font-weight="bold">Edenred</text>
+          </svg>
+          <span class="text-xs mt-1 text-gray-600">Edenred</span>
+        </div>
+        <!-- Transferencia -->
+        <div class="flex flex-col items-center">
+          <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
+            <rect width="48" height="32" rx="6" fill="#E0F2FE"/>
+            <path d="M12 16h24M24 8v16" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="16" r="4" fill="#0EA5E9"/>
+          </svg>
+          <span class="text-xs mt-1 text-gray-600">Transferencia</span>
+        </div>
+        <!-- Efectivo -->
+        <div class="flex flex-col items-center">
+          <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
+            <rect width="48" height="32" rx="6" fill="#FDE68A"/>
+            <rect x="10" y="10" width="28" height="12" rx="4" fill="#F59E42"/>
+            <circle cx="24" cy="16" r="4" fill="#FDE68A"/>
+          </svg>
+          <span class="text-xs mt-1 text-gray-600">Efectivo</span>
+        </div>
       </div>
-      <!-- MasterCard -->
-      <div class="flex flex-col items-center">
-        <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
-          <rect width="48" height="32" rx="6" fill="#fff"/>
-          <circle cx="18" cy="16" r="10" fill="#EB001B"/>
-          <circle cx="30" cy="16" r="10" fill="#F79E1B" fill-opacity="0.9"/>
-        </svg>
-        <span class="text-xs mt-1 text-gray-600">MasterCard</span>
-      </div>
-      <!-- American Express -->
-      <div class="flex flex-col items-center">
-        <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
-          <rect width="48" height="32" rx="6" fill="#2E77BB"/>
-          <text x="24" y="21" text-anchor="middle" fill="#fff" font-size="13" font-family="Arial" font-weight="bold">AMEX</text>
-        </svg>
-        <span class="text-xs mt-1 text-gray-600">American Express</span>
-      </div>
-      <!-- UpSíVale -->
-      <div class="flex flex-col items-center">
-        <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
-          <rect width="48" height="32" rx="6" fill="#E6007E"/>
-          <text x="24" y="21" text-anchor="middle" fill="#fff" font-size="12" font-family="Arial" font-weight="bold">UpSíVale</text>
-        </svg>
-        <span class="text-xs mt-1 text-gray-600">UpSíVale</span>
-      </div>
-      <!-- Edenred -->
-      <div class="flex flex-col items-center">
-        <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
-          <rect width="48" height="32" rx="6" fill="#E51B24"/>
-          <circle cx="36" cy="16" r="8" fill="#fff" fill-opacity="0.15"/>
-          <text x="24" y="21" text-anchor="middle" fill="#fff" font-size="12" font-family="Arial" font-weight="bold">Edenred</text>
-        </svg>
-        <span class="text-xs mt-1 text-gray-600">Edenred</span>
-      </div>
-      <!-- Transferencia -->
-      <div class="flex flex-col items-center">
-        <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
-          <rect width="48" height="32" rx="6" fill="#E0F2FE"/>
-          <path d="M12 16h24M24 8v16" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="24" cy="16" r="4" fill="#0EA5E9"/>
-        </svg>
-        <span class="text-xs mt-1 text-gray-600">Transferencia</span>
-      </div>
-      <!-- Efectivo -->
-      <div class="flex flex-col items-center">
-        <svg width="48" height="32" viewBox="0 0 48 32" fill="none">
-          <rect width="48" height="32" rx="6" fill="#FDE68A"/>
-          <rect x="10" y="10" width="28" height="12" rx="4" fill="#F59E42"/>
-          <circle cx="24" cy="16" r="4" fill="#FDE68A"/>
-        </svg>
-        <span class="text-xs mt-1 text-gray-600">Efectivo</span>
-      </div>
+
+      <a href="https://wa.me/qr/FMROBI6AVM7NM1" target="_blank"
+         class="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg transition-transform hover:scale-105">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-7 h-7"/>
+        ¡Haz tu pedido por WhatsApp!
+      </a>
+      <span class="text-gray-500 text-sm mt-2 text-center">¡Rápido, seguro y a tu gusto!</span>
     </div>
-    <a 
-      href="https://wa.me/qr/FMROBI6AVM7NM1"
-      target="_blank"
-      class="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg transition-transform hover:scale-105">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-7 h-7"/>
-      ¡Haz tu pedido por WhatsApp!
-    </a>
-    <span class="text-gray-500 text-sm mt-2 text-center">¡Rápido, seguro y a tu gusto!</span>
-  </div>
-</section>
-
-
-
-  
+  </section>
 
   <!-- Footer -->
   <footer class="bg-pink-700 text-white text-center py-4 mt-12">
     &copy; 2025 La Mordida de Bebe. Todos los derechos reservados.
   </footer>
 </body>
+
 <script defer src="./script.js"></script>
+
+<!-- NUEVO: scripts de comentarios -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/config.js"></script>
+<script defer src="/comentarios.js"></script>
 
 <script>
   AOS.init({
-    duration: 1000, // Duración de la animación en milisegundos
+    duration: 1000,      // Duración de la animación en milisegundos
     easing: 'ease-out-cubic', // Tipo de animación
-    once: false, // La animación ocurre solo una vez
+    once: false,         // La animación ocurre solo una vez
   });
 </script>
 </html>
