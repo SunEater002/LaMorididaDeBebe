@@ -27,7 +27,7 @@
 
     <form id="reset-request" class="hidden bg-white rounded-xl shadow-lg p-6 space-y-4 max-w-md mx-auto">
       <h2 class="text-xl font-bold text-pink-700">Recuperar contraseña</h2>
-      <p class="text-gray-600">Te enviaremos un enlace al correo de administrador.</p>
+      <p class="text-gray-600">Te enviaremos un enlace al correo de administrador. Al enviarlo, revisa tu correo y abre ese enlace para volver aquí y crear la contraseña.</p>
       <input id="reset-email" type="email" required placeholder="Correo de administrador" autocomplete="email"
              class="w-full border-2 border-pink-200 focus:border-pink-500 outline-none rounded-lg px-3 py-2">
       <button class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 rounded-lg">Enviar enlace</button>
@@ -63,8 +63,9 @@
     const cfg = window.SUPABASE_CONFIG;
     const db = window.supabase.createClient(cfg.url, cfg.anonKey);
     const $ = (id) => document.getElementById(id);
+    const parametrosHash = new URLSearchParams(window.location.hash.slice(1));
     let filtro = 'pendiente';
-    let enRecuperacion = new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery';
+    let enRecuperacion = parametrosHash.get('type') === 'recovery';
 
     const estrellas = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
 
@@ -234,6 +235,14 @@
       }
     });
 
+    const errorRecuperacion = parametrosHash.get('error_description');
+    if (errorRecuperacion) {
+      $('login-error').textContent = 'El enlace de recuperación venció o no es válido. Solicita uno nuevo.';
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    } else if (enRecuperacion) {
+      mostrarPanel(false);
+    }
+
     $('login').addEventListener('submit', async (e) => {
       e.preventDefault();
       $('login-error').textContent = '';
@@ -257,7 +266,7 @@
         $('login-error').textContent = 'No se pudo verificar la sesión. Recarga la página e inténtalo de nuevo.';
         return;
       }
-      if (!enRecuperacion) mostrarPanel(!!data.session);
+      if (!enRecuperacion && !errorRecuperacion) mostrarPanel(!!data.session);
     });
   </script>
 </body>
