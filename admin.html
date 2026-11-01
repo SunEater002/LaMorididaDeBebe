@@ -21,7 +21,28 @@
       <input id="password" type="password" required placeholder="Contraseña" autocomplete="current-password"
              class="w-full border-2 border-pink-200 focus:border-pink-500 outline-none rounded-lg px-3 py-2">
       <button class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 rounded-lg">Entrar</button>
+      <button id="forgot-password" type="button" class="w-full text-pink-700 hover:underline">¿Olvidaste tu contraseña?</button>
       <p id="login-error" class="text-red-600 font-semibold text-center"></p>
+    </form>
+
+    <form id="reset-request" class="hidden bg-white rounded-xl shadow-lg p-6 space-y-4 max-w-md mx-auto">
+      <h2 class="text-xl font-bold text-pink-700">Recuperar contraseña</h2>
+      <p class="text-gray-600">Te enviaremos un enlace al correo de administrador.</p>
+      <input id="reset-email" type="email" required placeholder="Correo de administrador" autocomplete="email"
+             class="w-full border-2 border-pink-200 focus:border-pink-500 outline-none rounded-lg px-3 py-2">
+      <button class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 rounded-lg">Enviar enlace</button>
+      <button id="back-to-login" type="button" class="w-full text-pink-700 hover:underline">Volver a iniciar sesión</button>
+      <p id="reset-request-message" class="font-semibold text-center" role="status"></p>
+    </form>
+
+    <form id="new-password" class="hidden bg-white rounded-xl shadow-lg p-6 space-y-4 max-w-md mx-auto">
+      <h2 class="text-xl font-bold text-pink-700">Crear nueva contraseña</h2>
+      <input id="new-password-value" type="password" required minlength="6" placeholder="Nueva contraseña" autocomplete="new-password"
+             class="w-full border-2 border-pink-200 focus:border-pink-500 outline-none rounded-lg px-3 py-2">
+      <input id="confirm-password" type="password" required minlength="6" placeholder="Confirma la contraseña" autocomplete="new-password"
+             class="w-full border-2 border-pink-200 focus:border-pink-500 outline-none rounded-lg px-3 py-2">
+      <button class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 rounded-lg">Guardar contraseña</button>
+      <p id="new-password-message" class="font-semibold text-center" role="status"></p>
     </form>
 
     <!-- Panel -->
@@ -43,6 +64,7 @@
     const db = window.supabase.createClient(cfg.url, cfg.anonKey);
     const $ = (id) => document.getElementById(id);
     let filtro = 'pendiente';
+    let enRecuperacion = new URLSearchParams(window.location.hash.slice(1)).get('type') === 'recovery';
 
     const estrellas = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
 
@@ -152,10 +174,65 @@
     }
 
     function mostrarPanel(si) {
-      $('login').classList.toggle('hidden', si);
-      $('panel').classList.toggle('hidden', !si);
-      if (si) cargar();
+      $('login').classList.toggle('hidden', si || enRecuperacion);
+      $('reset-request').classList.add('hidden');
+      $('new-password').classList.toggle('hidden', !enRecuperacion);
+      $('panel').classList.toggle('hidden', !si || enRecuperacion);
+      if (si && !enRecuperacion) cargar();
     }
+
+    $('forgot-password').addEventListener('click', () => {
+      $('login').classList.add('hidden');
+      $('reset-request').classList.remove('hidden');
+      $('reset-email').value = $('email').value.trim();
+      $('reset-request-message').textContent = '';
+    });
+
+    $('back-to-login').addEventListener('click', () => {
+      $('reset-request').classList.add('hidden');
+      $('login').classList.remove('hidden');
+    });
+
+    $('reset-request').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const { error } = await db.auth.resetPasswordForEmail($('reset-email').value.trim(), {
+        redirectTo: window.location.origin + window.location.pathname
+      });
+      const message = $('reset-request-message');
+      message.textContent = error
+        ? 'No se pudo enviar el enlace. Verifica la configuración de recuperación e inténtalo de nuevo.'
+        : 'Si el correo está registrado, recibirás un enlace para restablecer la contraseña.';
+      message.className = 'font-semibold text-center ' + (error ? 'text-red-600' : 'text-green-700');
+    });
+
+    $('new-password').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const message = $('new-password-message');
+      const password = $('new-password-value').value;
+      if (password !== $('confirm-password').value) {
+        message.textContent = 'Las contraseñas no coinciden.';
+        message.className = 'font-semibold text-center text-red-600';
+        return;
+      }
+
+      const { error } = await db.auth.updateUser({ password });
+      if (error) {
+        message.textContent = 'No se pudo actualizar la contraseña. Solicita un nuevo enlace e inténtalo de nuevo.';
+        message.className = 'font-semibold text-center text-red-600';
+        return;
+      }
+
+      enRecuperacion = false;
+      mostrarPanel(true);
+    });
+
+    db.auth.onAuthStateChange((event) => {
+      if (event === 'PASSWORD_RECOVERY') {
+        enRecuperacion = true;
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        mostrarPanel(false);
+      }
+    });
 
     $('login').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -175,7 +252,13 @@
       if (f) { filtro = f; cargar(); }
     });
 
-    db.auth.getSession().then(({ data }) => mostrarPanel(!!data.session));
+    db.auth.getSession().then(({ data, error }) => {
+      if (error) {
+        $('login-error').textContent = 'No se pudo verificar la sesión. Recarga la página e inténtalo de nuevo.';
+        return;
+      }
+      if (!enRecuperacion) mostrarPanel(!!data.session);
+    });
   </script>
 </body>
 </html>
