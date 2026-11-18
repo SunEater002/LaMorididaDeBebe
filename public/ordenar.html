@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#a71158">
+        <meta name="description" content="Pide tus boneless, combos y complementos a domicilio en La Mordida de Bebe.">
+        <title>Ordena aquí | La Mordida de Bebe</title>
+        <link rel="icon" href="/img/icono-husky.png">
+        <link rel="stylesheet" href="./ordenar.css">
+    </head>
+    <body>
+        <header class="top">
+            <a class="brand" href="./index.html">
+                <img src="/img/huskyboneless.png" alt="Logo de La Mordida de Bebe">
+                <span>
+                    <strong>La Mordida de Bebe</strong>
+                    <small>Buenas huellitas 🐾 · Solo a domicilio</small>
+                </span>
+            </a>
+            <a class="back" href="./index.html">← Volver a inicio</a>
+        </header>
+        <main>
+            <div class="hero">
+                <span class="eyebrow">🐾 HECHO CON AMOR</span>
+                <h1>Arma tu mordida perfecta</h1>
+                <p>Elige tus boneless, agrega complementos y mándanos tu pedido completo por WhatsApp.</p>
+                <a class="hero-action" href="#menu">Explorar menú ↓</a>
+            </div>
+            <div class="layout">
+                <section id="menu" class="catalog">
+                    <h2>Menú de la manada</h2>
+                    <p class="muted">Selecciona un producto para personalizarlo antes de agregarlo.</p>
+                    <div class="filters" role="group" aria-label="Categorías">
+                        <button class="active" data-filter="todos">Todos</button>
+                        <button data-filter="combos">Combos</button>
+                        <button data-filter="boneless">Boneless</button>
+                        <button data-filter="extras">Complementos</button>
+                    </div>
+                    <div id="products" class="products"></div>
+                </section>
+                <aside class="side">
+                    <div class="panel" id="carrito">
+                        <h2>🛒 Tu pedido <span id="count" class="count">0</span></h2>
+                        <div id="cart-lines" aria-live="polite"></div>
+                        <div class="totals">
+                            <div>
+                                <span>Subtotal</span>
+                                <strong id="subtotal">$0</strong>
+                            </div>
+                            <div>
+                                <span>Envío</span>
+                                <strong id="shipping-price">Selecciona zona</strong>
+                            </div>
+                            <div class="grand">
+                                <span>Total estimado</span>
+                                <strong id="total">$0</strong>
+                            </div>
+                        </div>
+                        <p class="hint">Envío gratis en la zona de Cuautitlán hasta 5 km; Joyas de Cuautitlán, Alborada y Galaxia: $30. La cobertura se confirma al recibir el pedido.</p>
+                    </div>
+                    <form class="panel" id="checkout">
+                        <h2>📍 Entrega a domicilio</h2>
+                        <label>
+                            Nombre completo *
+                            <input name="nombre" required maxlength="100" autocomplete="name" placeholder="Tu nombre">
+                        </label>
+                        <label>
+                            Teléfono de contacto *
+                            <input name="telefono" type="tel" required maxlength="20" minlength="10" autocomplete="tel" placeholder="10 dígitos">
+                        </label>
+                        <label>
+                            Dirección completa *
+                            <textarea name="direccion" required maxlength="400" placeholder="Calle, número, colonia, municipio, CP"></textarea>
+                        </label>
+                        <label>
+                            Zona de entrega *
+                            <select name="zona" id="delivery-zone" required>
+                                <option value="">Selecciona tu zona</option>
+                                <option value="cuautitlan">Cuautitlán (dentro de 5 km) — GRATIS</option>
+                                <option value="joyas">Joyas de Cuautitlán — $30</option>
+                                <option value="alborada">Alborada — $30</option>
+                                <option value="galaxia">Galaxia — $30</option>
+                                <option value="otra">Otra colonia — consultar cobertura y envío</option>
+                            </select>
+                        </label>
+                        <p id="zone-note" class="hint" role="status">El radio de 5 km se toma desde la zona de operación del restaurante. Selecciona tu colonia; verificaremos la cobertura con tu dirección o ubicación.</p>
+                        <label>
+                            Referencias de entrega
+                            <input name="referencias" maxlength="250" placeholder="Color de casa, entre calles, etc.">
+                        </label>
+                        <button type="button" class="location" id="locate">📍 Compartir mi ubicación actual</button>
+                        <div id="geo-status" class="hint" role="status">Opcional. También puedes pegar un enlace de Google Maps.</div>
+                        <label>
+                            Enlace de Google Maps
+                            <input name="mapa" type="url" maxlength="1000" placeholder="https://maps.google.com/...">
+                        </label>
+                        <label>
+                            Forma de pago *
+                            <select name="pago" required>
+                                <option value="">Seleccionar</option>
+                                <option>Efectivo</option>
+                                <option>Transferencia</option>
+                                <option>Tarjeta al recibir</option>
+                            </select>
+                        </label>
+                        <label>
+                            Comentarios generales
+                            <textarea name="comentarios" maxlength="600" placeholder="Indicaciones para preparar o entregar tu pedido"></textarea>
+                        </label>
+                        <button type="submit" class="submit">Enviar pedido por WhatsApp ↗</button>
+                        <p class="hint">Se abrirá WhatsApp con el mensaje preparado. Debes pulsar Enviar para realizar la solicitud. La disponibilidad y el envío se confirman con el restaurante.</p>
+                        <div id="form-status" role="status" aria-live="polite"></div>
+                    </form>
+                </aside>
+            </div>
+        </main>
+        <dialog id="customize">
+            <form method="dialog" id="dialog-form">
+                <button type="button" class="close" id="close-dialog" aria-label="Cerrar">✕</button>
+                <img id="dialog-img" alt="">
+                <h2 id="dialog-title"></h2>
+                <p id="dialog-desc" class="muted"></p>
+                <strong id="dialog-price" class="price"></strong>
+                <div id="options"></div>
+                <label>
+                    Cantidad
+                    <input type="number" name="cantidad" id="quantity" min="1" max="30" value="1" required>
+                </label>
+                <label>
+                    Instrucciones para este producto
+                    <textarea name="nota" id="note" maxlength="300" placeholder="Ej. sin zanahoria"></textarea>
+                </label>
+                <button type="submit" id="add" class="submit">Agregar al carrito</button>
+            </form>
+        </dialog>
+        <footer>🐾 La Mordida de Bebe · Pedidos a domicilio</footer>
+        <script src="./ordenar.js" defer></script>
+    </body>
+</html>
