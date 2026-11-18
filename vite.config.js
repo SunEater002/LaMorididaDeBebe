@@ -4,5 +4,6 @@ export default defineConfig({
   root: '.', // Asegúrate de que el directorio raíz sea correcto
   build: {
     outDir: 'dist', // Directorio de salida para la compilación
+    rollupOptions: { input: { main: 'index.html', ordenar: 'ordenar.html', admin: 'admin.html' } },
   },
 });

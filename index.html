@@ -20,6 +20,7 @@
       <img src="./img/huskyboneless.png" alt="Logo La Mordida de Bebe" class="w-32 h-32 rounded-full mb-4">
       <h1 class="text-4xl md:text-6xl font-extrabold text-center mb-4 text-gray-100">La Mordida de Bebe</h1>
       <div class="flex flex-col md:flex-row gap-4 mt-4">
+        <a href="./ordenar.html" class="inline-block bg-green-600 hover:bg-green-700 hover:scale-105 text-white font-extrabold py-3 px-6 rounded-2xl shadow-lg transition-all duration-300 text-center">🛒 ORDENA AQUÍ</a>
         <a href="#ofertas" class="inline-block bg-pink-500 hover:bg-pink-700 hover:scale-105 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-all duration-300 text-center">
           OFERTAS
         </a>
@@ -58,7 +59,7 @@
         <h3 class="text-4xl font-bold text-gray-100 mb-2 text-center">Aullido Infernal 🔥</h3>
         <span class="bg-pink-100 text-pink-700 font-bold px-6 py-2 rounded-full mb-4">$109 MXN</span>
         <button onclick="toggleLista('servicio1-lista')" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Info</button>
-        <button onclick="ordenarProducto('Aullido Infernal', 109)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
+        <a href="./ordenar.html?producto=aullido" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto text-center">Agregar al pedido</a>
         <ul id="servicio1-lista" class="acordeon mt-4 text-left w-full bg-pink-100 rounded-lg p-4 shadow-inner space-y-2">
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> 10 pz de Boneless sabor Buffalo</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> Aderezo Ranch</li>
@@ -72,7 +73,7 @@
         <h3 class="text-4xl font-bold text-gray-100 mb-2 text-center">Ladrido BBQ 🐶</h3>
         <span class="bg-pink-100 text-pink-700 font-bold px-6 py-2 rounded-full mb-4">$109 MXN</span>
         <button onclick="toggleLista('servicio2-lista')" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Info</button>
-        <button onclick="ordenarProducto('Ladrido BBQ', 109)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
+        <a href="./ordenar.html?producto=ladrido" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto text-center">Agregar al pedido</a>
         <ul id="servicio2-lista" class="acordeon mt-4 text-left w-full bg-pink-100 rounded-lg p-4 shadow-inner space-y-2">
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> 10 pz de Boneless sabor BBQ</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> Aderezo Ranch</li>
@@ -86,7 +87,7 @@
         <h3 class="text-4xl font-bold text-gray-100 mb-2 text-center">Nieve Siberiana ❄️</h3>
         <span class="bg-pink-100 text-pink-700 font-bold px-6 py-2 rounded-full mb-4">$109 MXN</span>
         <button onclick="toggleLista('servicio3-lista')" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Info</button>
-        <button onclick="ordenarProducto('Nieve Siberiana', 109)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
+        <a href="./ordenar.html?producto=nieve" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto text-center">Agregar al pedido</a>
         <ul id="servicio3-lista" class="acordeon mt-4 text-left w-full bg-pink-100 rounded-lg p-4 shadow-inner space-y-2">
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> 10 pz de Boneless Naturales</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-pink-700 rounded-full mr-2"></span> Aderezo Ranch</li>
@@ -116,7 +117,7 @@
         <p class="text-gray-700 mb-2 font-semibold">10 pz de Boneless ( BBQ, Buffalo, Naturales) + Papas a la francesa, acompañadas con Aderezo Ranch</p>
         <span class="inline-block bg-pink-600 text-white px-4 py-1 rounded-full font-semibold mb-4">Solo por tiempo limitado</span>
         <span class="bg-pink-100 text-pink-700 font-bold px-4 py-1 rounded-full mb-4">$120 MXN</span>
-        <button onclick="ordenarProducto('Combo Alfa', 120)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
+        <a href="./ordenar.html?producto=alfa" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto text-center">Agregar al pedido</a>
       </div>
     </div>
 
@@ -131,7 +132,7 @@
         <p class="text-gray-700 mb-2 font-semibold"> + 25 pesos se puede agregar una porcion de papas a la francesa </p>
         <span class="inline-block bg-pink-600 text-white px-4 py-1 rounded-full font-semibold mb-4">Solo hoy</span>
         <span class="bg-pink-100 text-pink-700 font-bold px-4 py-1 rounded-full mb-4">$169 MXN</span>
-        <button onclick="ordenarProducto('Combo Doble', 169)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
+        <a href="./ordenar.html?producto=doble" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto text-center">Agregar al pedido</a>
       </div>
     </div>
 
@@ -145,7 +146,7 @@
         <p class="text-gray-700 mb-2 font-semibold">30 pz de Boneless ( BBQ, Buffalo, Naturales) + 1 orden de papas a la francesa, acompañadas con Aderezo Ranch</p>
         <span class="inline-block bg-pink-600 text-white px-4 py-1 rounded-full font-semibold mb-4">Solo por tiempo limitado</span>
         <span class="bg-pink-100 text-pink-700 font-bold px-4 py-1 rounded-full mb-4">$320 MXN</span>
-        <button onclick="ordenarProducto('Combo Manada', 320)" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto">Ordenar por WhatsApp</button>
+        <a href="./ordenar.html?producto=manada" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg font-semibold shadow mt-auto text-center">Agregar al pedido</a>
       </div>
     </div>
   </section>
@@ -351,7 +352,7 @@ Cada pedido que sale de nuestra cocina lleva el espíritu alegre de Bebe y el co
   <!-- ============ FIN COMENTARIOS ============ -->
 
   <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/qr/FMROBI6AVM7NM1" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 rounded-full p-3 shadow-lg transition-transform hover:scale-110">
+  <a href="./ordenar.html" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 rounded-full p-3 shadow-lg transition-transform hover:scale-110">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-8 h-8"/>
   </a>
 
@@ -360,7 +361,7 @@ Cada pedido que sale de nuestra cocina lleva el espíritu alegre de Bebe y el co
       <h2 class="text-3xl font-extrabold text-pink-700 mb-2 text-center">¡Pagos fáciles y seguros!</h2>
       <p class="text-lg text-gray-700 text-center font-semibold mb-4">
         Aceptamos pagos con <span class="text-pink-600 font-bold">tarjeta</span>, <span class="text-pink-600 font-bold">transferencia</span> y <span class="text-pink-600 font-bold">efectivo</span>.<br>
-        Haz tu pedido por WhatsApp y elige tu método favorito.
+        Arma tu pedido en línea y elige tu método favorito.
       </p>
 
       <div class="flex flex-wrap justify-center gap-8 mb-4">
@@ -426,10 +427,10 @@ Cada pedido que sale de nuestra cocina lleva el espíritu alegre de Bebe y el co
         </div>
       </div>
 
-      <a href="https://wa.me/qr/FMROBI6AVM7NM1" target="_blank"
+      <a href="./ordenar.html"
          class="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg transition-transform hover:scale-105">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-7 h-7"/>
-        ¡Haz tu pedido por WhatsApp!
+        ¡Ordena tu pedido aquí!
       </a>
       <span class="text-gray-500 text-sm mt-2 text-center">¡Rápido, seguro y a tu gusto!</span>
     </div>
